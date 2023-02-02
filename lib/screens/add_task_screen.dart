@@ -6,7 +6,7 @@ import 'package:hive/hive.dart';
 import 'package:time_pickerr/time_pickerr.dart';
 
 class AddTaskScreen extends StatefulWidget {
-  AddTaskScreen({Key? key}) : super(key: key);
+  const AddTaskScreen({Key? key}) : super(key: key);
 
   @override
   State<AddTaskScreen> createState() => _AddTaskScreenState();
@@ -44,32 +44,32 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 44),
+                  padding: const EdgeInsets.symmetric(horizontal: 44),
                   child: Directionality(
                     textDirection: TextDirection.rtl,
                     child: TextField(
                       controller: controllerTaskTitle,
                       focusNode: negahban1,
                       decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 15),
                         labelText: 'عنوان تسک',
                         labelStyle: TextStyle(
                           fontSize: 20,
                           color: negahban1.hasFocus
-                              ? Color(0xff18DAA3)
-                              : Color(0xffC5C5C5),
+                              ? const Color(0xff18DAA3)
+                              : const Color(0xffC5C5C5),
                         ),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                           borderSide:
                               BorderSide(color: Color(0xffC5C5C5), width: 3.0),
                         ),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                           borderSide: BorderSide(
                             width: 3,
@@ -80,11 +80,11 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 44),
+                  padding: const EdgeInsets.symmetric(horizontal: 44),
                   child: Directionality(
                     textDirection: TextDirection.rtl,
                     child: TextField(
@@ -92,21 +92,21 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                       maxLines: 2,
                       focusNode: negahban2,
                       decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 15),
                         labelText: 'توضیحات تسک',
                         labelStyle: TextStyle(
                           fontSize: 20,
                           color: negahban2.hasFocus
-                              ? Color(0xff18DAA3)
-                              : Color(0xffC5C5C5),
+                              ? const Color(0xff18DAA3)
+                              : const Color(0xffC5C5C5),
                         ),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                           borderSide:
                               BorderSide(color: Color(0xffC5C5C5), width: 3.0),
                         ),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                           borderSide: BorderSide(
                             width: 3,
@@ -123,17 +123,17 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     title: 'زمان تسک را انتخاب کن',
                     negativeButtonText: 'حذف کن',
                     positiveButtonText: 'انتخاب زمان',
-                    titleStyle: TextStyle(
+                    titleStyle: const TextStyle(
                       color: Color(0xff18DAA3),
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
-                    negativeButtonStyle: TextStyle(
+                    negativeButtonStyle: const TextStyle(
                       color: Color.fromARGB(255, 218, 92, 24),
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
-                    positiveButtonStyle: TextStyle(
+                    positiveButtonStyle: const TextStyle(
                       color: Color(0xff18DAA3),
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -145,7 +145,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     onNegativePressed: (context) {},
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 200,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -166,7 +166,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     },
                   ),
                 ),
-                // Spacer(),
                 ElevatedButton(
                   onPressed: () {
                     String taskTitle = controllerTaskTitle.text;
@@ -175,16 +174,16 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     addTesk(taskTitle, taskSubTitle);
                     Navigator.of(context).pop();
                   },
-                  child: Text(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff18DAA3),
+                    minimumSize: const Size(200, 48),
+                  ),
+                  child: const Text(
                     'اضافه کردن تسک',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff18DAA3),
-                    minimumSize: Size(200, 48),
                   ),
                 )
               ],

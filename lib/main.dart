@@ -8,31 +8,35 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   await Hive.initFlutter();
+
+  // ignore: unused_local_variable
   var box = await Hive.openBox('names');
+
   Hive.registerAdapter(TaskAdapter());
   Hive.registerAdapter(TaskTypeAdapter());
   Hive.registerAdapter(TaskTypeEnumAdapter());
   await Hive.openBox<Task>('taskBox');
 
-  runApp(Application());
+  runApp(const MyApp());
 }
 
-class Application extends StatelessWidget {
-  const Application({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          fontFamily: 'SM',
-          textTheme: TextTheme(
-            headline4: TextStyle(
-              fontFamily: 'GB',
-              fontSize: 16,
-            ),
-          )),
+        fontFamily: 'SM',
+        textTheme: const TextTheme(
+          headlineMedium: TextStyle(
+            fontFamily: 'GB',
+            fontSize: 16,
+          ),
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

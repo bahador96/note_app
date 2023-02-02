@@ -7,7 +7,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 // import 'package:msh_checkbox/msh_checkbox.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: const Color(0xffE5E5E5),
       body: Center(
         child: ValueListenableBuilder(
           valueListenable: taskBox.listenable(),
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: taskBox.values.length,
                 itemBuilder: ((BuildContext context, int index) {
                   var task = taskBox.values.toList()[index];
-                  print(task.taskType.title);
+                  // print(task.taskType.title);
                   return _getListItem(task);
                 }),
               ),
@@ -57,10 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
         visible: isFabVisible,
         child: FloatingActionButton(
           onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => AddTaskScreen()));
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const AddTaskScreen()));
           },
-          backgroundColor: Color(0xff18DAA3),
+          backgroundColor: const Color(0xff18DAA3),
           child: Image.asset('images/icon_add.png'),
         ),
       ),

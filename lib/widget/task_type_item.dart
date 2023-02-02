@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/task_type.dart';
 
@@ -18,16 +20,18 @@ class TaskTypeItemList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: (selectedItemList == index) ? Color(0xff18DAA3) : Colors.white,
+        color: (selectedItemList == index)
+            ? const Color(0xff18DAA3)
+            : Colors.white,
         border: Border.all(
           color: (selectedItemList == index) ? Colors.green : Colors.grey,
           width: 2,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(10),
         ),
       ),
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       width: 140,
       child: Column(
         children: [

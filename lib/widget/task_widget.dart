@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/task.dart';
 import 'package:flutter_application_1/screens/edit_task_screen.dart';
@@ -37,11 +39,11 @@ class _TaskWidgetState extends State<TaskWidget> {
         });
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         height: 132,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xffFFFFFF),
+          color: const Color(0xffFFFFFF),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
@@ -69,7 +71,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                       value: isBoxChecked,
                       checkColor: Colors.white,
                       activeColor: Colors.green,
-                      shape: RoundedRectangleBorder(
+                      shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(5),
                         ),
@@ -84,13 +86,13 @@ class _TaskWidgetState extends State<TaskWidget> {
                 widget.task.subTitle,
                 overflow: TextOverflow.ellipsis,
               ),
-              Spacer(),
+              const Spacer(),
               _getTimeAndEditBadgs(),
             ],
           ),
         ),
         // Spacer(),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
         Image.asset(widget.task.taskType.image),
@@ -105,21 +107,21 @@ class _TaskWidgetState extends State<TaskWidget> {
           width: 90,
           height: 28,
           decoration: BoxDecoration(
-            color: Color(0xff18DAA3),
+            color: const Color(0xff18DAA3),
             borderRadius: BorderRadius.circular(18),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             child: Row(
               children: [
                 Text(
                   '${widget.task.time.hour}:${getMinUnderTen(widget.task.time)}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Image.asset('images/icon_time.png'),
@@ -127,7 +129,7 @@ class _TaskWidgetState extends State<TaskWidget> {
             ),
           ),
         ),
-        SizedBox(width: 15),
+        const SizedBox(width: 15),
         InkWell(
           onTap: () {
             Navigator.of(context).push(
@@ -142,23 +144,23 @@ class _TaskWidgetState extends State<TaskWidget> {
             width: 95,
             height: 28,
             decoration: BoxDecoration(
-              color: Color(0xffE2F6F1),
+              color: const Color(0xffE2F6F1),
               // color: Colors.black,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'ویرایش',
                     style: TextStyle(
                       // color: Color(0xff18DAA3),
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Image.asset(
